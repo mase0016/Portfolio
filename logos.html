@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website</title> 
+    <link rel="stylesheet" href="css/main.css">  
+    <link rel="stylesheet" href="css/webdev.css">
+    <link rel="stylesheet" href="css/logo.css">
+    <script src="https://kit.fontawesome.com/873a672f3d.js" crossorigin="anonymous"></script>
+</head> 
+<body>  
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo_1.jpg" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html">About</a></li>
+                    <li><a href="index.html">Services</a></li>
+                    <li><a href="index.html">Portfolio</a></li>
+                    <li><a href="index.html">Contact</a></li>
+                    <i class="fas fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fas fa-solid fa-bars" onclick="openmenu()"></i> 
+            </nav>
+            
+            <section class="slideshow-container">
+                <div class="slider-wrapper">
+                    <div class="slider" id="imageSlider">
+                        <img src="images/aligners.jpg" alt="Aligners Design">
+                        <img src="images/decorous.jpg" alt="Decorous Design">
+                        <img src="images/logo-sub_1.jpg" alt="Logo Variation 1">
+                        <img src="images/logo-sub_22.jpg" alt="Logo Variation 2">
+                        <img src="images/algon_logo.jpg" alt="Algon Logo">
+                        <img src="images/bakery_logo.jpg" alt="Bakery Logo">
+                        <img src="images/portfolio_logo1.png" alt="Portfolio Logo">
+                        <img src="images/logo_maker_project.png" alt="Logo Maker Project">
+                    </div>
+                </div>
+                <div class="slide-nav">
+                    <button id="prevBtn" onclick="prevSlide()"><i class="fas fa-chevron-left"></i> Prev</button>
+                    <button id="nextBtn" onclick="nextSlide()">Next <i class="fas fa-chevron-right"></i></button>
+                </div>
+            </section>    
+            
+            <a href="digital_graphics.html" class="btn"><strong>Back to Digital Graphics</strong></a>
+        </div>
+
+        <div class="copyright">
+            <p>Copyright © 2025 Elvis Zak Masembe. All rights reserved.</p>
+        </div>
+       
+
+<script>
+        const slider = document.getElementById('imageSlider');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        let currentIndex = 0;
+        const visibleItems = 5; // Number of images visible at once
+        const totalItems = slider.children.length;
+        
+        function updateSlider() {
+            // Calculate the maximum index we can go to
+            const maxIndex = Math.max(totalItems - visibleItems, 0);
+            
+            // Enable/disable buttons based on current position
+            prevBtn.disabled = currentIndex === 0;
+            nextBtn.disabled = currentIndex >= maxIndex;
+            
+            // Calculate the percentage to move
+            const movePercentage = -(currentIndex * (100 / visibleItems));
+            slider.style.transform = `translateX(${movePercentage}%)`;
+        }
+        
+        function nextSlide() {
+            const maxIndex = Math.max(totalItems - visibleItems, 0);
+            if (currentIndex < maxIndex) {
+                currentIndex++;
+                updateSlider();
+            } else {
+                // If at end, loop back to start
+                currentIndex = 0;
+                updateSlider();
+            }
+        }
+        
+        function prevSlide() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateSlider();
+            } else {
+                // If at start, loop to end
+                currentIndex = Math.max(totalItems - visibleItems, 0);
+                updateSlider();
+            }
+        }
+        
+        // Auto-slide functionality
+        let autoSlide = setInterval(nextSlide, 3000);
+        
+        // Pause auto-slide on hover
+        slider.addEventListener('mouseenter', () => {
+            clearInterval(autoSlide);
+        });
+        
+        slider.addEventListener('mouseleave', () => {
+            autoSlide = setInterval(nextSlide, 3000);
+        });
+        
+        // Initialize slider
+        updateSlider();
+        
+        // Your existing menu functions
+        function openmenu() {
+            // Your existing code
+        }
+        
+        function closemenu() {
+            // Your existing code
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website</title>
+    <link rel="stylesheet" href="css/main.css">  
+    <link rel="stylesheet" href="css/webdev.css">
+     
+    
+    <script src="https://kit.fontawesome.com/873a672f3d.js" crossorigin="anonymous"></script>
+</head> 
+<body>  
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo_1.jpg" class="logo" alt="Portfolio Logo">
+                <ul id="sidemenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html">About</a></li>
+                    <li><a href="index.html">Services</a></li>
+                    <li><a href="index.html">Portfolio</a></li>
+                    <li><a href="index.html">Contact</a></li>
+                    <i class="fas fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fas fa-solid fa-bars" onclick="openmenu()"></i> 
+            </nav>
+            
+            <div class="header-text">
+                <div id="portfolio">
+                    <div class="container">
+                        <h1 class="sub-title">Websites I Built</h1>
+                        <div class="work-list">
+                            <div class="work">
+                                <img src="images/high_sec.jpg" alt="High Security and Clean Company Website">
+                                <div class="layer">
+                                    <h2>High Security and Clean Company</h2>
+                                    <p><strong>Freelance work</strong></p>
+                                    <a href="https://highsecclean.com/" target="_blank" aria-label="Visit High Security and Clean Company website"><i class="fa-solid fa-link"></i></a>
+                                </div>
+                            </div>
+                            <div class="work">
+                                <img src="images/lone-starfish.jpg" alt="Lone Starfish Website">
+                                <div class="layer">
+                                    <h2>Lone Starfish Website</h2>
+                                    <p><strong>School Project</strong></p>
+                                    <a href="https://mase0016.github.io/midterm/" target="_blank" aria-label="Visit Lone Starfish website"><i class="fa-solid fa-link"></i></a>
+                                </div>
+                            </div>
+                            <div class="work">
+                                <img src="images/main-banner.jpg" alt="Three Star Media Website">
+                                <div class="layer">
+                                    <h2>Three Star Media</h2>
+                                    <p><strong>School Project</strong></p>
+                                    <a href="https://mase0016.github.io/final-project/" target="_blank" aria-label="Visit Three Star Media website"><i class="fa-solid fa-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="text-align: center;">
+                            <a href="digital_graphics.html" class="btn"><strong>Go to Digital Graphics</strong></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="copyright">
+        <p>Copyright © 2025 Elvis Zak Masembe. All rights reserved.</p>
+    </div>
+
+    <script>
+        // Mobile menu functionality
+        var sidemenu = document.getElementById("sidemenu");
+
+        function openmenu(){
+            sidemenu.style.right = "0";
+        }
+        
+        function closemenu(){
+            sidemenu.style.right = "-200px";
+        }
+
+        // Close menu when clicking on a link (for mobile)
+        document.querySelectorAll('#sidemenu a').forEach(link => {
+            link.addEventListener('click', closemenu);
+        });
+    </script>
+
+</body>
+</html>

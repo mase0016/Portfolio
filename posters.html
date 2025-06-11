@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website</title> 
+    <link rel="stylesheet" href="css/main.css">  
+    <link rel="stylesheet" href="css/webdev.css">
+    <link rel="stylesheet" href="css/logo.css">
+    <link rel="stylesheet" href="css/poster.css">
+    <script src="https://kit.fontawesome.com/873a672f3d.js" crossorigin="anonymous"></script>
+</head> 
+<body>  
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo_1.jpg" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html">About</a></li>
+                    <li><a href="index.html">Services</a></li>
+                    <li><a href="index.html">Portfolio</a></li>
+                    <li><a href="index.html">Contact</a></li>
+                    <i class="fas fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fas fa-solid fa-bars" onclick="openmenu()"></i> 
+            </nav>
+            
+            <section class="poster-gallery">
+                <!-- Personal Posters Section -->
+                <div class="gallery-section">
+                    <h2>My Posters</h2>
+                    <div class="slider-container">
+                        <div class="slider" id="personalSlider">
+                            <img src="images/chill.jpg" alt="Chill Poster Design">
+                            <img src="images/awesome_god.jpg" alt="Awesome God Poster">
+                            <img src="images/the_awakening_poster.jpg" alt="The Awakening Poster">
+                        </div>
+                        <div class="slider-nav">
+                            <button onclick="scrollSlider('personalSlider', -300)"><i class="fas fa-chevron-left"></i> Prev</button>
+                            <button onclick="scrollSlider('personalSlider', 300)">Next <i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Ivy Client Posters Section -->
+                <div class="gallery-section">
+                    <h2>Client Posters - Ivy Collection</h2>
+                    <div class="slider-container">
+                        <div class="slider" id="ivySlider">
+                            <img src="images/ivy_3.jpg" alt="Ivy Poster 1" onclick="openFullscreenContainer()">
+                            <img src="images/ivy_2.jpg" alt="Ivy Poster 2">
+                            <img src="images/ivy_1.jpg" alt="Ivy Poster 3">
+                            <img src="images/ivy_5.jpg" alt="Ivy Poster 4">
+                            <img src="images/ivy_6.jpg" alt="Ivy Poster 5">
+                            <img src="images/ivy_7.jpg" alt="Ivy Poster 6">
+                            <img src="images/ivy_8.jpg" alt="Ivy Poster 7">
+                            <img src="images/ivy_9.jpg" alt="Ivy Poster 8">
+                            <img src="images/ivy_10.jpg" alt="Ivy Poster 9">
+                            <img src="images/ivy_11.jpg" alt="Ivy Poster 10">
+                            <img src="images/ivy_12.jpg" alt="Ivy Poster 11">
+                            <img src="images/ivy_13.jpg" alt="Ivy Poster 12">
+                            <img src="images/ivy_14.jpg" alt="Ivy Poster 13">
+                            <img src="images/ivy_15.jpg" alt="Ivy Poster 14">
+                            <img src="images/ivy_4.jpg" alt="Ivy Poster 15">
+                        </div>
+                        <div class="slider-nav">
+                            <button onclick="scrollSlider('ivySlider', -300)"><i class="fas fa-chevron-left"></i> Prev</button>
+                            <button onclick="scrollSlider('ivySlider', 300)">Next <i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Other Client Posters Section -->
+                <div class="gallery-section">
+                    <h2>Other Client Posters</h2>
+                    <div class="slider-container">
+                        <div class="slider" id="otherClientsSlider">
+                            <img src="images/ultra_1.jpg" alt="Ultra Poster 1">
+                            <img src="images/ultra_2.jpg" alt="Ultra Poster 2">
+                            <img src="images/ultra_3.jpg" alt="Ultra Poster 3">
+                            <img src="images/ultra_4.jpg" alt="Ultra Poster 4">
+                            <img src="images/ultra_5.jpg" alt="Ultra Poster 5">
+                            <img src="images/cocktail_menu.jpg" alt="Cocktail Menu Design">
+                            <img src="images/decorous_cover.jpg" alt="Decorous Cover 1">
+                            <img src="images/decorous_cover2.jpg" alt="Decorous Cover 2">
+                            <img src="images/juice_co.jpg" alt="Juice Co. Design">
+                        </div>
+                        <div class="slider-nav">
+                            <button onclick="scrollSlider('otherClientsSlider', -300)"><i class="fas fa-chevron-left"></i> Prev</button>
+                            <button onclick="scrollSlider('otherClientsSlider', 300)">Next <i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Designs Section -->
+                <div class="gallery-section">
+                    <h2>Designs</h2>
+                    <div class="slider-container">
+                        <div class="slider" id="designsSlider">
+                            <img src="images/my_catoon.jpg" alt="My Cartoon Design">
+                            <img src="images/expanded_avator.jpg" alt="Expanded Avatar Design">
+                        </div>
+                        <div class="slider-nav">
+                            <button onclick="scrollSlider('designsSlider', -300)"><i class="fas fa-chevron-left"></i> Prev</button>
+                            <button onclick="scrollSlider('designsSlider', 300)">Next <i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </section>    
+            
+            <a href="digital_graphics.html" class="back-btn"><strong>Back to Digital Graphics</strong></a>
+        </div>
+
+        <div class="copyright">
+            <p>Copyright © 2025 Elvis Zak Masembe. All rights reserved.</p>
+        </div>
+    </div>
+    
+    <script>
+        // Smooth scrolling for sliders
+        function scrollSlider(sliderId, scrollAmount) {
+            const slider = document.getElementById(sliderId);
+            slider.scrollBy({
+                left: scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+        
+        // Your existing menu functions
+        function openmenu() {
+            // Your existing code
+        }
+        
+        function closemenu() {
+            // Your existing code
+        }
+    </script>
+</body>
+</html>
