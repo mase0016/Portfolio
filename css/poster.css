@@ -15,7 +15,7 @@
             position: relative;
             padding-bottom: 15px;
         }
-        
+
         .gallery-section h2::after {
             content: '';
             position: absolute;
